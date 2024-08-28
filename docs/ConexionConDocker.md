@@ -22,12 +22,12 @@ proyecto-spring-postgres/
 │   │   │               └── RolController.java
 │   │   └── resources/
 │   │       ├── application.properties
-│   │       └── import.sql
 │   └── test/
 │       └── java/
 │           └── com/
 │               
 ├── docker-compose.yml
+├── init.sql
 ├── pom.xml
 └── README.md
 ```
@@ -113,8 +113,7 @@ services:
       - POSTGRES_USER=usuario
       - POSTGRES_PASSWORD=contraseña
     volumes:
-      - ./src/main/resources/import.sql:/docker-entrypoint-initdb.d/import.sql
-
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 ```
 
 1. El archivo `docker-compose.yml` está configurado en la raíz del proyecto para iniciar PostgreSQL.

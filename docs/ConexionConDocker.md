@@ -130,8 +130,8 @@ docker-compose down
 ## Solución de Problemas
 
 - **Error de conexión a la base de datos**: Verifica que el contenedor de PostgreSQL esté en ejecución y que los datos de conexión en `application.properties` sean correctos.
-- **Tablas no creadas o datos no insertados**: Verifica el contenido de `import.sql` y asegúrate de que `spring.sql.init.mode=always` esté configurado en `application.properties`.
-- **Errores de "relation does not exist"**: Asegúrate de que los modelos JPA coincidan con la estructura de la base de datos definida en `import.sql`.
+- **Tablas no creadas o datos no insertados**: Verifica el contenido de `init.sql` y asegúrate de que `spring.sql.init.mode=always` esté configurado en `application.properties`.
+- **Errores de "relation does not exist"**: Asegúrate de que los modelos JPA coincidan con la estructura de la base de datos definida en `init.sql`.
 
 Si encuentras algún otro problema, revisa los logs de la aplicación para obtener más detalles sobre el error.
 
